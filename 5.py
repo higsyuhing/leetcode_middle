@@ -12,6 +12,7 @@ class Solution(object):
         #  + + + * * * * * *, then it will be 2n-1 search time
         #  ...              , then and reduce the searching cost
         #  + + + + + + + + *
+        # in fact, I am using Approach 4: Expand Around Center, interesting... 
         res = [0, 0]
         lenmax = 0
         length = len(s)
