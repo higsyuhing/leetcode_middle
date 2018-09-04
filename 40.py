@@ -80,6 +80,8 @@ class Solution(object):
         # I think this answer not very good... 
         # since it cannot record duplicate computation
         # e.g. 1,2,3,4,...: [2,3] and [1,4] share the same remaining computation... 
+        # the solution in csdn etc. is pretty good
+        # but how to avoid the case above? post it on leetcode, lets see
         
         
         
