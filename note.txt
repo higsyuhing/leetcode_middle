@@ -9,7 +9,6 @@ star question:
 22
 31, special question, no idea at all
 39
-40, think about it, even though it's good enough
 
 
 
