@@ -67,3 +67,6 @@ public:
         return result; 
     }
 };
+
+
+/* sorting not hashing is also fine, I mean the [26] array */
