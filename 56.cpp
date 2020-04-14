@@ -1,10 +1,8 @@
 class Solution {
 public:
+    // algorithm is too slow.. ?? same as the solution..
     static bool comparefunc(vector<int>& thisI, vector<int>& nextI){
-        vector<int>::iterator it, in; 
-        it = thisI.begin();
-        in = nextI.begin();
-        return (*it) < (*in); 
+        return thisI[0] < nextI[0]; 
     }
     
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
@@ -12,9 +10,10 @@ public:
         
         // sort by the starting point
         sort(intervals.begin(), intervals.end(), comparefunc); 
-        
+                
         int index = 0; 
-        while(index < (intervals.size()-1)){
+        int bound = intervals.size()-1; 
+        while(index < bound){
             // index and index+1
             // merge if: next start <= this end
             if(intervals[index+1][0] <= intervals[index][1]){
@@ -23,6 +22,7 @@ public:
                     intervals[index][1] = intervals[index+1][1]; 
                 }
                 intervals.erase(intervals.begin()+index+1); 
+                bound--; 
             }
             else{
                 index++; 
