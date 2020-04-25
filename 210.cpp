@@ -3,6 +3,8 @@ public:
     
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
         
+        // Now I see this is a topological sort process.. 
+        
         // I see.. this is a tree problem.. post order traversal
         // but implemented in a hashmap
         
