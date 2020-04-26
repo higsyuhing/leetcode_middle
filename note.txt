@@ -14,6 +14,6 @@ star question:
 2020.04 gambling, interesting question
 127
 529, write a more clean/clear code
-
+279, could be math/dp/bfs solution..
 
 
