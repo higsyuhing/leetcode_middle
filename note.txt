@@ -15,5 +15,7 @@ star question:
 127
 529, write a more clean/clear code
 279, could be math/dp/bfs solution..
-130, write clean/clear code for describing the scenario. 
+130+542, write clean/clear code for describing the scenario. 
+
+
 
