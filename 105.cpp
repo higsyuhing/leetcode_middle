@@ -51,3 +51,34 @@ public:
         
     }
 };
+/*
+
+public:
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+        this->preorder = preorder;
+        this->inorder = inorder;
+        preidx = 0;
+        for(int i = 0; i < inorder.size(); i++) {
+            idxmap.insert(make_pair(inorder[i], i));
+        }
+        return buildNode(0, inorder.size() - 1);
+    }
+private:
+    vector<int> preorder;
+    vector<int> inorder;
+    unordered_map<int, int> idxmap;
+    int preidx;
+    
+    TreeNode* buildNode(int left, int right) {
+        if(left > right) return NULL;
+        int val = preorder[preidx++];
+        TreeNode* root = new TreeNode(val);
+        int idx = idxmap.at(val);
+        root->left = buildNode(left, idx - 1);
+        root->right = buildNode(idx + 1, right);
+        return root;
+    }
+};
+
+
+*/
