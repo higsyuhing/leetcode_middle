@@ -18,3 +18,7 @@ star question:
 130+542+1091, write clean/clear code for describing the scenario. 
 947, interesting sol
 105, check better solution
+1066, interesting scenario
+
+
+
