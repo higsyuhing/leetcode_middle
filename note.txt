@@ -19,6 +19,6 @@ star question:
 947, interesting sol
 105, check better solution
 1066, interesting scenario
-
+986, write simple code. 
 
 
