@@ -20,5 +20,5 @@ star question:
 105, check better solution
 1066, interesting scenario
 986, write simple code. 
-
+457, rethink about it.. I believe there is a easier solution.. 
 
