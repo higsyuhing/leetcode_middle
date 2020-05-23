@@ -112,3 +112,22 @@ class Solution(object):
         return arr[k-flag1-1]
         '''
         
+        '''
+        # this solution, start with [min, max)
+        # use binary search to count each side.. 
+        l, r = matrix[0][0], matrix[-1][-1] + 1
+        
+        while l < r:
+            m = (r - l) / 2 + l
+            
+            count = 0
+            for i in range(len(matrix)):
+                count += bisect.bisect_right(matrix[i], m)
+            
+            if count >= k:
+                r = m
+            else:
+                l = m + 1
+        
+        return l
+        '''
