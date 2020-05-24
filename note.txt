@@ -22,3 +22,7 @@ star question:
 986, write simple code. 
 457, rethink about it.. I believe there is a easier solution.. 
 373, the compare definition and fixed size heap.
+981, check the python usage.. 
+
+
+
