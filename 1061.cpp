@@ -50,3 +50,6 @@ public:
         return S;
     }
 };
+/*
+https://github.com/ScientificKnights/Leetcode-Templates-and-Examples/blob/master/code/1061.%20Lexicographically%20Smallest%20Equivalent%20String.h
+*/
