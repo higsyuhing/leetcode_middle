@@ -26,5 +26,5 @@ star question:
 421, this is math? but check solution, duel 100% result. 
 399, union find and bfs. 
 547, union find and dfs standard.. 
-
+1202, I am fucking soooo weak!! 
 
