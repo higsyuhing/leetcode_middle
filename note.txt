@@ -25,6 +25,6 @@ star question:
 981, check the python usage.. 
 421, this is math? but check solution, duel 100% result. 
 399, union find and bfs. 
-547, union find and dfs standard.. 
+547,959 union find and dfs standard.. 
 1202, I am fucking soooo weak!! 
 737, huahua answer is sooo good, check.. 
