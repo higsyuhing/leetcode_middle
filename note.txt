@@ -28,3 +28,6 @@ star question:
 547,959 union find and dfs standard.. 
 1202, I am fucking soooo weak!! 
 737, huahua answer is sooo good, check.. 
+300, that's smart...
+658, the java one is better
+
