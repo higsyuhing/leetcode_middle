@@ -30,4 +30,5 @@ star question:
 737, huahua answer is sooo good, check.. 
 300, that's smart...
 658, the java one is better
-
+260, tricky.. bit manipulation.. 
+338, bit manipulation.. 
