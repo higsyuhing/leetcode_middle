@@ -32,3 +32,5 @@ star question:
 658, the java one is better
 260, tricky.. bit manipulation.. 
 338, bit manipulation.. 
+523, this solution is pretty cool! 
+
