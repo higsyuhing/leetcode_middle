@@ -33,4 +33,8 @@ star question:
 260, tricky.. bit manipulation.. 
 338, bit manipulation.. 
 523, this solution is pretty cool! 
+365, gcd algo.. 
+223, rectangle overlap condition. 
+670, think about why you cannot come up with this idea.. 
+
 
