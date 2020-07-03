@@ -35,6 +35,6 @@ star question:
 523, this solution is pretty cool! 
 365, gcd algo.. 
 223, rectangle overlap condition. 
-670, think about why you cannot come up with this idea.. 
+670,396 think about why you cannot come up with this idea.. 
 
 
