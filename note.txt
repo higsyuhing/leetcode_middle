@@ -37,4 +37,10 @@ star question:
 223, rectangle overlap condition. 
 670,396 think about why you cannot come up with this idea.. 
 673, check sol..DP. 
+1140,837, classic dp. 
+fast vector allocation? 
+309, dp
+
+
+
 
