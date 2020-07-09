@@ -40,7 +40,8 @@ star question:
 1140,837, classic dp. 
 fast vector allocation? 
 309, dp
-
-
+213, dp
+516, dp
+1277, dp
 
 
