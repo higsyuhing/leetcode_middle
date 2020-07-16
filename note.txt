@@ -44,6 +44,7 @@ fast vector allocation?
 516, dp
 1277, dp
 486,464 game dp
+740, dp fine..
 
 
 
