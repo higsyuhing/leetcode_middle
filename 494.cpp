@@ -40,3 +40,9 @@ public:
         return count; 
     }
 };
+
+/*
+check notes here: 
+https://leetcode.com/problems/target-sum/discuss/455024/DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions.
+*/
+
