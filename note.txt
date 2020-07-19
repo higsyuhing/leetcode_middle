@@ -46,8 +46,8 @@ fast vector allocation?
 486,464 game dp
 740, dp fine..
 698, dp
-416,368 dp, not that hard questions
-
-
+416,368,790 dp, not that hard questions
+1155, dp
+494, check explanation
 
 
