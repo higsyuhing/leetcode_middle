@@ -50,4 +50,11 @@ fast vector allocation?
 1155, dp
 494, check explanation
 
+------ 2020 fall
+
+1574, sliding window.. 
+
+
+
+
 
