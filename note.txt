@@ -53,7 +53,7 @@ fast vector allocation?
 ------ 2020 fall
 
 1574, sliding window.. 
-
+386, and several questions from sqw.. 
 
 
 
