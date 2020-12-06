@@ -8,7 +8,7 @@ public:
             }
         }
     }
-    
+    /*
     vector<int> lexicalOrder(int n) {
         vector<int> res; 
         if(n == 0) return res; 
@@ -17,7 +17,8 @@ public:
         }
         return res; 
     }
-    /*
+    */
+    
     // iterative structure.. much slower.. 
     vector<int> lexicalOrder(int n) {
         vector<int> res; 
@@ -31,13 +32,15 @@ public:
                 
                 if(curr <= n){
                     res.push_back(curr); 
-                    for(int j = 9; j >= 0; j--) mystack.push(curr*10+j); 
+                    for(int j = 9; j >= 0; j--){
+                        if((curr*10+j) <= n) mystack.push(curr*10+j); 
+                    }
                 }
             }
         }
         return res; 
     }
-    */
+    
 };
 
 /*
