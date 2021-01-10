@@ -56,5 +56,5 @@ fast vector allocation?
 386, and several questions from sqw.. 
 518, interesting dp.. 
 
-
+395, sliding window is not easy.. by the number of unique char.. 
 
