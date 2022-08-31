@@ -1,40 +1,124 @@
 class H2O {
-private: 
     int numH, numO; 
     mutex lock; 
-    condition_variable cvH, cvO, cv_trans; 
-    int trans; 
+    condition_variable cvH, cvO; 
+    bool trans; 
+    int transH, transO; 
     
 public:
     H2O() {
         numH = 0; 
         numO = 0; 
-        trans = 0; 
+        trans = false; 
+        transH = 2; 
+        transO = 1; 
     }
 
     void hydrogen(function<void()> releaseHydrogen) {
-        
-        unique_lock ul(lock);    
-        
-        while (trans > 0)
-            cv_trans.wait(ul); 
+        unique_lock ul(lock); 
         
         numH++; 
-
-        if ((numH < 2) || (numO < 1))
-            cvH.wait(ul); 
         
-        if ((numH >= 2) && (numO >= 1)){
-            cvH.notify_one(); 
-            cvO.notify_one(); 
-            trans = 2; 
+        while(1)
+        {
+            if ((trans == false) && ((numH >= 2) && (numO >= 1))) break; 
+            if ((trans == true) && (transH > 0)) break; 
+            cvH.wait(ul); 
+        }
+        
+        trans = true; 
+        numH--; 
+        transH--; 
+        
+        if (transH > 0) cvH.notify_one(); 
+        if (transO > 0) cvO.notify_one(); 
+        if ((transH == 0) && (transO == 0))
+        {
+            trans = false; 
+            transH = 2; 
+            transO = 1; 
         }
         
         // releaseHydrogen() outputs "H". Do not change or remove this line.
         releaseHydrogen();
+    }
+
+    void oxygen(function<void()> releaseOxygen) {
+        unique_lock ul(lock); 
+        
+        numO++; 
+        
+        while(1)
+        {
+            if ((trans == false) && ((numH >= 2) && (numO >= 1))) break; 
+            if ((trans == true) && (transO > 0)) break; 
+            cvO.wait(ul); 
+        }
+        
+        trans = true; 
+        numO--; 
+        transO--; 
+        
+        if (transH == 1) cvH.notify_one(); 
+        else cvH.notify_all();  // <---- you must need to do this otherwise serialize in H-thread will make you LTE
+        
+        if ((transH == 0) && (transO == 0))
+        {
+            trans = false; 
+            transH = 2; 
+            transO = 1; 
+        }
+        
+        // releaseOxygen() outputs "O". Do not change or remove this line.
+        releaseOxygen();
+    }
+};
+
+/*
+class H2O {
+private: 
+    int numH, numO; 
+    mutex lockH, lockO; 
+    condition_variable cvH, cvO, cv_trans; 
+    int transH, transO; 
+    
+public:
+    H2O() {
+        numH = 0; 
+        numO = 0; 
+        transH = 0; 
+        transO = 0; 
+    }
+
+    void hydrogen(function<void()> releaseHydrogen) {
+        
+        unique_lock ul(lockH);    
+        
+        // while (trans > 0)
+        //     cv_trans.wait(ul); 
+        
+        numH++; 
+        
+        if (transH > 0) goto label_releaseH; 
+
+        if ((numH < 2) || (numO < 1))
+            cvH.wait(ul); 
+        
+        if (transH > 0) goto label_releaseH; 
+        
+        if ((numH >= 2) && (numO >= 1)){
+            cvH.notify_one(); 
+            cvO.notify_one(); 
+            transH = 2; 
+            transO = 1; 
+        }
+        
+label_releaseH: 
+        // releaseHydrogen() outputs "H". Do not change or remove this line.
+        releaseHydrogen();
         numH--; 
-        trans--; 
-        if (trans == 0) cv_trans.notify_all(); 
+        transH--; 
+        // if (trans == 0) cv_trans.notify_all(); 
         
         ul.unlock(); 
         
@@ -42,33 +126,39 @@ public:
 
     void oxygen(function<void()> releaseOxygen) {
         
-        unique_lock ul(lock); 
+        unique_lock ul(lockO); 
         
-        while (trans > 0)
-            cv_trans.wait(ul); 
+        // while (trans > 0)
+        //     cv_trans.wait(ul); 
         
         numO++; 
+        
+        if (transO > 0) goto label_releaseO; 
 
         if ((numH < 2) || (numO < 1))
             cvO.wait(ul); 
         
+        if (transO > 0) goto label_releaseO; 
+        
         if ((numH >= 2) && (numO >= 1)){
             cvH.notify_one(); 
             cvH.notify_one(); 
-            trans = 2; 
+            transH = 2; 
+            transO = 1; 
         }
         
+label_releaseO: 
         // releaseOxygen() outputs "O". Do not change or remove this line.
         releaseOxygen();
         numO--; 
-        trans--; 
-        if (trans == 0) cv_trans.notify_all(); 
+        transO--; 
+        // if (trans == 0) cv_trans.notify_all(); 
         
         ul.unlock(); 
         
     }
 };
-
+*/
 
 /*
 class H2O {
@@ -263,6 +353,5 @@ public:
 */
 
 /*
-while it is not passed, it is close enough to one of the solution in the discussion. 
-that's enough for this question. 
+you must follow several places to make sure it can run through the test...... 
 */
