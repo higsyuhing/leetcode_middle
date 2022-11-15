@@ -8,7 +8,7 @@ public:
         //  2) num is visited before (guaranteed smaller op)
 
         int visitmap[1001]; 
-        for (int i = 0; i < 1001; i++) visitmap[i] = -1; 
+        for (int i = 0; i < 1001; i++) visitmap[i] = -1; // <-- since the hash has const size, use array instead
         visitmap[start] = 0; // since start != goal, this is fine
 
         queue<int> bfsqueue; // num
@@ -22,24 +22,54 @@ public:
             bfsqueue.pop(); 
 
             for (int &num : nums){
-                int val[3]; 
+                int val1, val2, val3; 
                 int op = visitmap[curr]; 
 
-                val[0] = curr + num; 
-                val[1] = curr - num; 
-                val[2] = curr ^ num; 
+                val1 = curr + num; 
+                val2 = curr - num; 
+                val3 = curr ^ num; 
                 // debug_count++; 
 
-                for (int i = 0; i < 3; i++){
-                    if (val[i] == goal){
-                        // cout << debug_count << endl; 
-                        return (op+1); 
-                    }
-                    if ((val[i] >= 0) && (val[i] <= 1000) && (visitmap[val[i]] == -1)){
-                        visitmap[val[i]] = op + 1; 
-                        bfsqueue.push(val[i]); 
-                    }
+                // for (int i = 0; i < 3; i++){
+                //     if (val[i] == goal){
+                //         // cout << debug_count << endl; 
+                //         return (op+1); 
+                //     }
+                //     if ((val[i] >= 0) && (val[i] <= 1000) && (visitmap[val[i]] == -1)){
+                //         visitmap[val[i]] = op + 1; 
+                //         bfsqueue.push(val[i]); 
+                //     }
+                // }
+                
+                // <-- loop unrolling for better perf. 
+
+                if (val1 == goal){
+                    // cout << debug_count << endl; 
+                    return (op+1); 
                 }
+                if ((val1 >= 0) && (val1 <= 1000) && (visitmap[val1] == -1)){
+                    visitmap[val1] = op + 1; 
+                    bfsqueue.push(val1); 
+                }
+
+                if (val2 == goal){
+                    // cout << debug_count << endl; 
+                    return (op+1); 
+                }
+                if ((val2 >= 0) && (val2 <= 1000) && (visitmap[val2] == -1)){
+                    visitmap[val2] = op + 1; 
+                    bfsqueue.push(val2); 
+                }
+
+                if (val3 == goal){
+                    // cout << debug_count << endl; 
+                    return (op+1); 
+                }
+                if ((val3 >= 0) && (val3 <= 1000) && (visitmap[val3] == -1)){
+                    visitmap[val3] = op + 1; 
+                    bfsqueue.push(val3); 
+                }
+
             }
         }
 
