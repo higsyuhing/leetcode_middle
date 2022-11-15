@@ -27,7 +27,7 @@ public:
 
                 for (int i = 0; i < 3; i++){
                     if (val[i] == goal) return (op+1); 
-                    if ((visitmap.count(val[i]) == 0) && (val[i] >= 0) && (val[i] <= 1000)){ // <-- 2nd improve: 2 levels if merge to 1
+                    if ((visitmap.count(val[i]) == 0) && (val[i] >= 0) && (val[i] <= 1000)){ // <-- 2nd improve: 2 levels "if" merge to 1
                         visitmap[val[i]] = op + 1; 
                         bfsqueue.push(val[i]); 
                     }
