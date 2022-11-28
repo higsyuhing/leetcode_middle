@@ -68,7 +68,9 @@ fast vector allocation?
 2316 a great learning for union-find and D/B-FS
 2036 array and Kadane’s Algorithm! 
 
+------ 2022 winter
 
+1906 tricky question... interesting.. 
 
 
 
