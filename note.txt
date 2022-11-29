@@ -71,7 +71,7 @@ fast vector allocation?
 ------ 2022 winter
 
 1906 tricky question... interesting.. 
-
+45 worth reviewing
 
 
 
