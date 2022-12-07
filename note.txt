@@ -78,6 +78,6 @@ fast vector allocation?
 1680 take a look, light
 856 take a look, light
 729 take a look
-
+1024 take a look
 
 
