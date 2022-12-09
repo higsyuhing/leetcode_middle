@@ -18,6 +18,7 @@ public:
         long long MOD = 1000000007; 
         for (auto itx = hash.begin(); itx != hash.end(); itx++){
             for (auto ity = itx; ity != hash.end(); ity++){
+                //// should not have this for loop, just directly looking for itz key with target-itx-ity
                 for (auto itz = ity; itz != hash.end(); itz++){
                     int val = itx->first + ity->first + itz->first; 
                     if (val == target){
