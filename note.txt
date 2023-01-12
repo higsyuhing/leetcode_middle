@@ -88,4 +88,10 @@ fast vector allocation?
 1443 take a look, light
 139, great dp problem.. 
 918, very interesting problem. 
+1438, very interesting problem for pq! 
+
+
+
+
+
 
